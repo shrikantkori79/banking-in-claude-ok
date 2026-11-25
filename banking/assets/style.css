@@ -1,0 +1,139 @@
+:root{--ink:#17253b;--steel:#5a6a80;--line:#d3dae3;--bg:#eef1f5;--card:#fff;--navy:#14284b;--navy2:#1d3866;--accent:#0b7a63;--accent-d:#095f4d;--danger:#b3362d;--warn:#8a5a00;--radius:6px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 "Segoe UI","Noto Sans Kannada","Nirmala UI",system-ui,sans-serif;min-height:100vh;display:flex;flex-direction:column}
+main{flex:1;padding:22px 28px 70px;max-width:1280px;width:100%;margin:0 auto}
+h1{font-size:1.35rem;font-weight:600;margin:0 0 16px}
+a{color:var(--navy2)}
+.topbar{background:var(--navy);color:#fff;display:flex;align-items:stretch;gap:24px;padding:0 20px;min-height:48px}
+.brand{color:#fff;text-decoration:none;font-weight:600;display:flex;flex-direction:column;justify-content:center;line-height:1.1}
+.brand small{font-weight:400;font-size:.72rem;opacity:.7}
+.menu{display:flex;flex-wrap:wrap;align-items:stretch}
+.mi{position:relative;color:#fff;padding:0 14px;display:flex;align-items:center;cursor:default;font-size:.9rem;text-decoration:none}
+.mi:hover,.mi:focus-within{background:var(--navy2)}
+.mi .dd{display:none;position:absolute;top:100%;left:0;background:#fff;min-width:240px;border:1px solid var(--line);border-radius:0 0 var(--radius) var(--radius);box-shadow:0 8px 20px rgba(20,40,75,.18);z-index:20}
+.mi:hover .dd,.mi:focus-within .dd{display:block}
+.dd a{display:block;padding:9px 16px;color:var(--ink);text-decoration:none}
+.dd a:hover{background:#e6eef9}
+.plain-link{margin-left:auto}
+.statusbar{position:fixed;bottom:0;left:0;right:0;background:var(--navy);color:#b9c6dc;display:flex;gap:28px;padding:7px 20px;font-size:.82rem}
+.statusbar b{color:#fff;font-weight:600}
+.layout{display:grid;grid-template-columns:minmax(340px,520px) 1fr;gap:20px;align-items:start}
+@media(max-width:900px){.layout{grid-template-columns:1fr}main{padding:16px 12px 70px}}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px}
+.card h2{font-size:1rem;margin:0 0 12px}
+.field{display:grid;grid-template-columns:140px 1fr;gap:6px 12px;align-items:center;margin-bottom:12px}
+.field>label{color:var(--steel)}
+.field .pair{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.field .with-btn{display:flex;gap:8px}
+@media(max-width:560px){.field{grid-template-columns:1fr}}
+input[type=text],input[type=password],input[type=date],input[type=number],select,textarea{width:100%;padding:8px 10px;border:1px solid #b8c2d0;border-radius:var(--radius);font:inherit;background:#fff;color:var(--ink)}
+input:focus,select:focus,textarea:focus,button:focus-visible,a:focus-visible{outline:2px solid var(--accent);outline-offset:1px}
+textarea{min-height:76px;resize:vertical}
+.check{display:flex;align-items:center;gap:8px;margin:6px 0}
+.check input{width:auto}
+.actions{display:flex;gap:10px;margin-top:16px;padding-top:14px;border-top:1px solid var(--line)}
+button,.btn{font:inherit;padding:8px 18px;border-radius:var(--radius);border:1px solid #b8c2d0;background:#f5f7fa;color:var(--ink);cursor:pointer;text-decoration:none;display:inline-block}
+button:hover,.btn:hover{background:#e8edf4}
+.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.primary:hover{background:var(--accent-d)}
+.danger{color:var(--danger)}
+table.grid{width:100%;border-collapse:collapse;background:#fff}
+.grid th{background:#e6ebf2;text-align:left;font-weight:600;padding:8px 10px;border-bottom:1px solid var(--line);font-size:.88rem}
+.grid td{padding:8px 10px;border-bottom:1px solid #e6ebf2}
+.grid tr:hover td{background:#f4f8fc}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius)}
+.muted{color:var(--steel)}
+.empty{padding:22px;text-align:center;color:var(--steel)}
+.flash{padding:10px 14px;border-radius:var(--radius);margin-bottom:14px;border:1px solid}
+.flash.ok{background:#e4f4ee;border-color:#9fd3c0;color:#0a5442}
+.flash.err{background:#fbe9e7;border-color:#e4aaa4;color:#8c2a22}
+.perm-grid{display:grid;grid-template-columns:1fr 1fr;gap:4px 24px}
+@media(max-width:700px){.perm-grid{grid-template-columns:1fr}}
+/* login + launcher */
+body.login,body.launch{background:var(--navy);align-items:center;justify-content:center}
+body.login main,body.launch main{flex:0 1 auto;max-width:940px;padding:30px}
+body.login h1,body.launch h1{color:#fff}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:22px}
+@media(max-width:760px){.split{grid-template-columns:1fr}}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:12px}
+.tile{display:block;background:#fff;border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:var(--radius);padding:14px 16px;text-decoration:none;color:var(--ink)}
+.tile:hover{background:#f1f6fb}
+.tile small{display:block;color:var(--steel)}
+.tile.edit{border-left-color:#b07d0a}.tile.risk{border-left-color:var(--danger)}
+.tile.disabled{opacity:.55;pointer-events:none}
+.menu-list a{display:block;padding:10px 4px;border-bottom:1px solid var(--line);text-decoration:none;font-weight:500}
+.menu-list a:hover{background:#f1f6fb}
+@media(prefers-reduced-motion:no-preference){.flash{animation:fl .25s ease-out}@keyframes fl{from{opacity:0}to{opacity:1}}}
+.layout.wide{grid-template-columns:minmax(0,1fr) 300px}
+@media(max-width:1000px){.layout.wide{grid-template-columns:1fr}}
+.stack>.card{margin-bottom:14px}
+.card h2{color:var(--navy2)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:0 24px}
+@media(max-width:700px){.two{grid-template-columns:1fr}}
+.field.narrow{grid-template-columns:170px 1fr}
+.minigrid{width:100%;border-collapse:collapse;margin-top:8px}
+.minigrid th{text-align:left;font-size:.82rem;color:var(--steel);font-weight:600;padding:4px 6px}
+.minigrid td{padding:3px 4px}
+.minigrid input{padding:5px 7px}
+.picker{display:flex;gap:8px;margin-bottom:6px}
+.sidelist a{display:block;padding:7px 10px;border-bottom:1px solid var(--line);text-decoration:none}
+.sidelist a.on{background:#e4f4ee;font-weight:600}
+.sel{display:flex;gap:6px}
+.plus{padding:6px 10px;font-weight:600;line-height:1}
+.dirblock{border:1px solid var(--line);border-radius:var(--radius);padding:12px 16px;margin:0 0 14px;background:#fafbfd}
+.dirblock legend{color:var(--navy2);font-weight:600;padding:0 6px}
+dialog{border:1px solid var(--line);border-radius:var(--radius);padding:18px 20px;min-width:min(420px,92vw)}
+dialog::backdrop{background:rgba(20,40,75,.45)}
+dialog h2{margin:0 0 12px;font-size:1.05rem}
+.err{color:var(--danger);min-height:1.2em;margin:4px 0}
+[hidden]{display:none!important}
+.preview img{max-width:100%;max-height:150px;display:block;margin:8px 0;border:1px solid var(--line);border-radius:var(--radius)}
+
+.pledgebtn[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}
+.pledgebtn:disabled{opacity:.45;cursor:not-allowed}
+@media print{.noprint,.topbar,.statusbar,.flash{display:none!important} body{background:#fff} .card{break-inside:avoid;border-color:#999}}
+
+/* layout: robust, no sideways scrolling. Labels sit above inputs unless the box is wide enough for them to sit beside. */
+html,body{max-width:100%}
+.card,.stack>*,.layout>*,.two>*,.pair>*,.field>*{min-width:0}
+input,select,textarea{min-width:0;max-width:100%}
+.card,.two>div{container-type:inline-size}
+.field,.field.narrow{grid-template-columns:minmax(0,1fr);gap:4px;align-items:stretch}
+.two{grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr))}
+@container (min-width:380px){
+  .field{grid-template-columns:minmax(96px,150px) minmax(0,1fr);gap:6px 12px;align-items:center}
+  .field.narrow{grid-template-columns:minmax(110px,170px) minmax(0,1fr);gap:6px 12px;align-items:center}
+}
+@container (max-width:379px){.pair{grid-template-columns:minmax(0,1fr)}}
+.layout.wide{grid-template-columns:minmax(0,1fr) minmax(300px,360px)}
+@media(max-width:1100px){.layout.wide{grid-template-columns:minmax(0,1fr)}}
+
+/* pigmy / RD account: instalment detail stays on the right of the accounting detail, down to small windows */
+.layout.pr{grid-template-columns:minmax(0,1fr) minmax(340px,430px)}
+.layout.pr:has(#rdbox[hidden]){grid-template-columns:minmax(0,1fr)}
+@media(max-width:820px){.layout.pr{grid-template-columns:minmax(0,1fr)}}
+.two.compact{grid-template-columns:repeat(2,minmax(0,1fr));gap:0 14px}
+#sched th,#sched td{padding:5px 6px;font-size:.84rem;white-space:nowrap}
+
+/* print instalment (RD): only the account name, account no and the instalment table */
+#printhead{display:none}
+@media print{
+  body.printing-sched .topbar,body.printing-sched .statusbar,body.printing-sched .flash,body.printing-sched main>h1,
+  body.printing-sched #prform>.stack:first-child,body.printing-sched #rdbox>.card:first-child,body.printing-sched #printsched,body.printing-sched dialog{display:none!important}
+  body.printing-sched,body.printing-sched main{background:#fff;padding:0}
+  body.printing-sched #prform,body.printing-sched #rdbox{display:block!important}
+  body.printing-sched #schedcard{border:0;padding:0;box-shadow:none}
+  body.printing-sched #printhead{display:block;margin:0 0 10px}
+  body.printing-sched #printhead p{margin:2px 0}
+  body.printing-sched .tablewrap{overflow:visible;border:0}
+  body.printing-sched #sched th,body.printing-sched #sched td{color:#000;border:1px solid #999}
+}
+
+/* 2-step login */
+.steps{display:flex;align-items:center;gap:8px;color:var(--steel);font-size:.85rem;margin:0 0 14px}
+.steps i{display:block;width:34px;height:6px;border-radius:3px;background:var(--line)}
+.steps i.on{background:#e0a800}.steps i.done{background:var(--navy2)}
+input.otp{font-size:1.6rem;letter-spacing:.6em;text-align:center;font-family:ui-monospace,Consolas,monospace}
+.linkrow{display:flex;gap:14px;flex-wrap:wrap;margin-top:12px;font-size:.9rem}
+.linkbtn{background:none;border:0;padding:0;color:var(--navy2);text-decoration:underline;cursor:pointer;font:inherit}
+.devcode{background:#fff7d6;border:1px dashed #c99a00;border-radius:var(--radius);padding:8px 12px;margin-bottom:12px;color:#5c4400}
